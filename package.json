@@ -16,9 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,10 +35,7 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "homepage":"https://github.com/ishaniMadhuwanthi/blood-bank-management-system.git",
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
-  },
+  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
