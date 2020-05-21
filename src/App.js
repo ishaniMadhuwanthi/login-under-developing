@@ -12,9 +12,7 @@ function App() {
             <Main/>
         </Content>
     </Layout>
-</div>
-
-
+    </div>
   );
 }
 
