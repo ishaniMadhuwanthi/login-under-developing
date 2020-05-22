@@ -31,11 +31,15 @@ class Register extends Component{
         this.state = {
           firstName: null,
           lastName: null,
+          staffid:null,
+          nic: null, 
           email: null,
           password: null,
           formErrors: {
             firstName: "",
             lastName: "",
+            staffid:"",
+            nic: "", 
             email: "",
             password: ""
           }
@@ -56,8 +60,10 @@ class Register extends Component{
             --SUBMITTING--
             First Name: ${this.state.firstName}
             Last Name: ${this.state.lastName}
+            nic: ${this.state.nic}
+            staffid: ${this.state.staffid}
             Email: ${this.state.email}
-            Password: ${this.state.password}
+            Password: ${this.state.password} 
           `);
         } else {
           console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -76,6 +82,14 @@ class Register extends Component{
             break;
           case "lastName":
             formErrors.lastName =
+              value.length < 3 ? "Minimum 3 characaters required" : "";
+            break;
+          case "staffid":
+            formErrors.staffid =
+              value.length < 3 ? "Minimum 3 characaters required" : "";
+            break;
+          case "nic":
+            formErrors.nic =
               value.length < 3 ? "Minimum 3 characaters required" : "";
             break;
           case "email":
@@ -130,6 +144,34 @@ class Register extends Component{
                            />
                             {formErrors.lastName.length > 0 && (
                             <span className="errorMessage">{formErrors.lastName}</span>
+                            )}
+                        </div>
+                        <div className="nic">
+                        <label htmlFor="nic">NIC</label>
+                           <input
+                            className={formErrors.nic.length > 0 ? "error" : null}
+                            placeholder="NIC"
+                            type="text"
+                            name="nic"
+                            noValidate
+                            onChange={this.handleChange}
+                           />
+                            {formErrors.nic.length > 0 && (
+                            <span className="errorMessage">{formErrors.nic}</span>
+                            )}
+                        </div>
+                        <div className="staffid">
+                        <label htmlFor="staffid">Staff ID</label>
+                           <input
+                            className={formErrors.staffid.length > 0 ? "error" : null}
+                            placeholder="Staff ID"
+                            type="text"
+                            name="staffid"
+                            noValidate
+                            onChange={this.handleChange}
+                           />
+                            {formErrors.staffid.length > 0 && (
+                            <span className="errorMessage">{formErrors.staffid}</span>
                             )}
                         </div>
                         <div className="email">

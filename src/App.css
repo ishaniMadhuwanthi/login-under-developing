@@ -20,10 +20,6 @@
     height: 200px;
 }
 
-.avatar-login{
-  height: 100px;
-}
-
 .banner-text {
     background-color: black;
     opacity: .8;
@@ -73,7 +69,7 @@
     width: 400px;
     display:flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 10px;
     background-color:burlywood;
 }
@@ -99,14 +95,14 @@ label {
   }
   
   input {
-    padding: 10px 10px;
+    padding: 5px 5px;
     border-radius: 5px;
     outline: none;
     border: 1px solid #cfcfcf;
   }
   
   input::placeholder {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: lighter;
     color: #999;
   }
@@ -131,15 +127,30 @@ label {
   
   .firstName,
   .lastName,
+  .nic,
+  .staffid,
   .email,
   .password {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
 .firstName,
 .lastName {
+  width: 49%;
+}
+
+.nic {
+  margin-left: 1%;
+}
+
+.staffid {
+  margin-left: 1%;
+}
+
+.nic,
+.staffid {
   width: 49%;
 }
 
