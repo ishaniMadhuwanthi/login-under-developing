@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Header} from "react-mdl";
 
-
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
   );
@@ -49,7 +48,7 @@ class Register extends Component{
       goTolanding = (e) =>{ 
         e.preventDefault();
         console.log(this.state);
-        this.props.history.replace( '/landingpage');
+        this.props.history.replace( '/login');
     }
 
     handleSubmit = e => {
@@ -68,6 +67,8 @@ class Register extends Component{
         } else {
           console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         }
+       
+
     };
 
     handleChange = e => {

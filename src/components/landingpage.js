@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header,Tabs, Tab,Grid,Cell, IconButton,Menu,MenuItem } from "react-mdl";
+import { Header,Tabs, Tab,Grid,Cell, IconButton,Menu,MenuItem,RadioGroup,Radio, Button} from "react-mdl";
 
 class Landingpage extends Component{
 
@@ -7,38 +7,160 @@ class Landingpage extends Component{
         super(props);
         this.state = {activeTab:0};
         this.goToHome = this.goToHome.bind(this);
+        this.goToAbout= this.goToAbout.bind(this);
     }
   
     goToHome = (e) =>{ 
         e.preventDefault();
         console.log(this.state);
         this.props.history.replace( '/home');
-      }
-
+    }
+    goToAbout = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/aboutme');
+    }
     toggleCategories() {
         if (this.state.activeTab === 0) {
             return(
-                <div><h1>home</h1></div>
+               <div>dashboard</div>
             )
         }else if(this.state.activeTab === 1){
             return(
-                <div><h1>dashboard</h1></div>
+                <div className="wrapper-add">
+                   <form className="form-dadd">
+                   <h1>ADD DONOR</h1>
+                        <div className="dname">
+                            <label htmlFor="dname" >Name:</label>
+                            <input class ="rinput" placeholder="Enter donor name" type="text" name="dfirst" noValidate />
+                        </div>
+                        <div className="dnic">
+                        <label htmlFor="dnic">NIC:</label>
+                           <input class ="rinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
+                        </div> 
+                        <div className="dsex">
+                        <label htmlFor="dsex">Gender:</label>
+                            <input type="radio" name="gender" value="male"/> Male
+                            <input type="radio" name="gender" value="female"/> Female
+                        </div>  
+                        <div className="dage">
+                        <label htmlFor="dage">Age:</label>
+                           <input class ="rinput" placeholder="Enter age" type="text" name="dage" noValidate />    
+                        </div>  
+                        <div className="ddist">
+                        <label htmlFor="ddist">District:</label>
+                            <select id="dist" name="dist">
+                                <option value="kurunegla">Kurunegala</option>
+                                <option value="colombo">Colombo</option>
+                                <option value="galle">Galle</option>
+                                <option value="Rathnapura">Rathnapura</option>
+                            </select>
+                        </div>
+                        <div className="bday">
+                            <label htmlFor="bday">Birthday:</label>
+                            <input type="date" id="bday" name="bday" />
+                        </div> 
+                        <div>
+                        <label htmlFor="dbgrp">Blood group:</label>
+                            <select id="dbgrp" name="dbgrp">
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                            </select>
+                        </div>
+                        <div className="drday">
+                            <label htmlFor="drday">Registration date:</label>
+                            <input type="date" id="drday" name="drday" />
+                        </div> 
+                        <div className="dstaff">
+                        <label htmlFor="dstaff">Staff ID:</label>
+                           <input class ="rinput" placeholder="Enter staff ID" type="text" name="dstaff" noValidate />    
+                        </div> 
+                        <div className="donoradd">
+                        <Button type="submit" raised colored>ADD</Button>
+                        </div>
+                   </form> 
+                </div>   
             )
         }else if(this.state.activeTab === 2){
             return(
-                <div><h1>donor mgt</h1></div>
+                <div className="wrapper-add">
+                   <form className="form-dadd">
+                   <h1>ADD RECPIENTS</h1>
+                        <div className="dname">
+                            <label htmlFor="dname" >Name:</label>
+                            <input class ="rinput" placeholder="Enter donor name" type="text" name="dfirst" noValidate />
+                        </div>
+                        <div className="dnic">
+                        <label htmlFor="dnic">NIC:</label>
+                           <input class ="rinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
+                        </div> 
+                        <div className="dsex">
+                        <label htmlFor="dsex">Gender:</label>
+                            <input type="radio" name="gender" value="male"/> Male
+                            <input type="radio" name="gender" value="female"/> Female
+                        </div>  
+                        <div className="dage">
+                        <label htmlFor="dage">Age:</label>
+                           <input class ="rinput" placeholder="Enter age" type="text" name="dage" noValidate />    
+                        </div>  
+                        
+                        <div className="bday">
+                            <label htmlFor="bday">Birthday:</label>
+                            <input type="date" id="bday" name="bday" />
+                        </div> 
+                        <div>
+                        <label htmlFor="dbgrp">Blood group:</label>
+                            <select id="dbgrp" name="dbgrp">
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                            </select>
+                        </div>
+                        <div className="rqua">
+                        <label htmlFor="rqua">Blood Quantity:</label>
+                           <input class ="rinput" placeholder="Blood Quantity" type="text" name="rqua" noValidate />    
+                        </div>
+                        <div className="drday">
+                            <label htmlFor="drday">Registration date:</label>
+                            <input type="date" id="drday" name="drday" />
+                        </div>
+                        <div className="ddist">
+                        <label htmlFor="ddist">District:</label>
+                            <select id="dist" name="dist">
+                                <option value="kurunegla">Kurunegala</option>
+                                <option value="colombo">Colombo</option>
+                                <option value="galle">Galle</option>
+                                <option value="Rathnapura">Rathnapura</option>
+                            </select>
+                        </div> 
+                        <div className="dstaff">
+                        <label htmlFor="dstaff">Staff ID:</label>
+                           <input class ="rinput" placeholder="Enter staff ID" type="text" name="dstaff" noValidate />    
+                        </div> 
+                        <div className="dbmgr">
+                        <label  htmlFor="dbmgr">Blood Processing Manager ID:</label>
+                           <input class ="rinput" placeholder="Blood Processing manager ID" type="text" name="dbmgr" noValidate />    
+                        </div> 
+                        <div className="donoradd">
+                        <Button type="submit" raised colored>ADD</Button>
+                        </div>
+                   </form> 
+                </div>
             )   
         }else if(this.state.activeTab === 3){
             return(
-                <div><h1>blood mgt</h1></div>
-            )   
-        }else if(this.state.activeTab === 4){
-            return(
                 <div><h1>stock mgt</h1></div>
-            )   
-        }else if(this.state.activeTab === 5){
-            return(
-                <div><h1>logout</h1></div>
             )   
         }
     }
@@ -50,8 +172,8 @@ class Landingpage extends Component{
                  <div style={{position: 'relative'}}>
                     <IconButton name="more_vert" id="demo-menu-lower-left"/>
                          <Menu target="demo-menu-lower-left">
-                            <MenuItem>Home</MenuItem>
-                            <MenuItem>About us</MenuItem>
+                            <MenuItem onClick={this.goToHome}>Home</MenuItem>
+                            <MenuItem onClick={this.goToAbout}>About us</MenuItem>
                             <MenuItem>Logout</MenuItem>
                             <MenuItem>Settings</MenuItem>
                          </Menu>
@@ -61,11 +183,9 @@ class Landingpage extends Component{
 
             <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
                 <Tab>Dashboard</Tab>
-                <Tab onClick={this.goToHome}>Home</Tab>
                 <Tab>Donar Management</Tab>
-                <Tab>Blood Management</Tab>
+                <Tab>Recipients Management</Tab>
                 <Tab>Stock Management</Tab>
-                <Tab>Logout</Tab>
             </Tabs> 
             <section className="projects-grid">
                 <Grid className="projects-grid">

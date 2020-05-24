@@ -3,8 +3,6 @@ import Landingpage from './landingpage';
 import Home from './home';
 import Aboutme from './aboutme';
 import Contact from './contact';
-import Projects from './projects';
-import Resume from './resume';
 import Register from './register';
 import Login from './login';
 import { Switch , Route} from 'react-router-dom';
@@ -16,8 +14,6 @@ const Main = () => (
         <Route path="/landingpage" component={Landingpage} />
         <Route path="/aboutme" component={Aboutme} />
         <Route path="/contact" component={Contact} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/resume" component={Resume} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
     </Switch>
