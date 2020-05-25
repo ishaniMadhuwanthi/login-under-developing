@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header,Tabs, Tab,Grid,Cell, IconButton,Menu,MenuItem,RadioGroup,Radio, Button} from "react-mdl";
+import { Header,Tabs, Tab,Grid,Cell, IconButton,Menu,MenuItem, Button} from "react-mdl";
 
 class Landingpage extends Component{
 
@@ -8,6 +8,7 @@ class Landingpage extends Component{
         this.state = {activeTab:0};
         this.goToHome = this.goToHome.bind(this);
         this.goToAbout= this.goToAbout.bind(this);
+      
     }
   
     goToHome = (e) =>{ 
@@ -20,10 +21,67 @@ class Landingpage extends Component{
         console.log(this.state);
         this.props.history.replace( '/aboutme');
     }
+
     toggleCategories() {
         if (this.state.activeTab === 0) {
             return(
-               <div>dashboard</div>
+ <div>
+<div class="row1">
+  <div class="column">
+        <div class="card" data-toggle="collapse" data-target="#demo1" >
+            <h2>Check donor details</h2>
+        </div>
+    <div id="demo1" class="collapse">
+    <form class="card-form">
+        <div className="dnic">
+            <label htmlFor="dnic">Enter NIC:</label>
+                <input class ="rinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
+        </div> 
+        <button>Search</button>
+    </form>
+  </div>
+  </div>
+
+  <div class="column">
+  <div class="card" data-toggle="collapse" data-target="#demo2" >
+      <h2>Check blood stock</h2>  
+    </div>
+    <div id="demo2" class="collapse">
+    <form class="card-form" >
+        <div className="dbgrp">
+            <label htmlFor="dbgrp">Select blood type:</label>
+            <select id="dbgrp" name="dbgrp" >
+                <option value="O-">O-</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+                <option value="AB-">AB-</option>
+                <option value="AB+">AB+</option>
+            </select> 
+        </div> 
+        <button>Search</button>
+    </form>
+  </div>
+  </div>
+ 
+  </div>
+ 
+  <div class="row2">
+  <div class="column">
+    <div class="card">
+      <h2>Card 3</h2>
+    </div>
+    </div>
+  <div class="column">
+    <div class="card">
+      <h2>Card 4</h2>
+    </div>
+  </div>
+ </div>  
+</div>
+                
             )
         }else if(this.state.activeTab === 1){
             return(
@@ -192,9 +250,11 @@ class Landingpage extends Component{
                     <Cell col={12}>
                         <div className="content">{this.toggleCategories()}</div>
                     </Cell>
-                </Grid>
-                   
+                </Grid>       
             </section>
+
+
+            
         </div> 
         )
     }
