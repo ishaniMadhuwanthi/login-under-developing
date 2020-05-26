@@ -32,10 +32,10 @@ class Landingpage extends Component{
             <h2>Check donor details</h2>
         </div>
     <div id="demo1" class="collapse">
-    <form class="card-form">
+    <form class="card-form1">
         <div className="dnic">
             <label htmlFor="dnic">Enter NIC:</label>
-                <input class ="rinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
+                <input class ="cinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
         </div> 
         <button>Search</button>
     </form>
@@ -47,10 +47,10 @@ class Landingpage extends Component{
       <h2>Check blood stock</h2>  
     </div>
     <div id="demo2" class="collapse">
-    <form class="card-form" >
-        <div className="dbgrp">
-            <label htmlFor="dbgrp">Select blood type:</label>
-            <select id="dbgrp" name="dbgrp" >
+    <form class="card-form2" >
+        <div className="cbgrp">
+            <label htmlFor="cbgrp">Select blood type:</label>
+            <select id="cbgrp" name="cbgrp" >
                 <option value="O-">O-</option>
                 <option value="O+">O+</option>
                 <option value="A-">A-</option>

@@ -236,6 +236,7 @@ label {
 .drday,
 .dstaff,
 .dbmgr,
+.cbgrp,
 .rqua{
   display: flex;
   margin-bottom: 5px;
@@ -247,6 +248,11 @@ label {
 
 .rinput{
   width:250px;
+  height: 25px;
+}
+
+.cinput{
+  width:200px;
   height: 25px;
 }
 
@@ -302,7 +308,7 @@ label {
   margin: 60px 100px;
 }
 
-.card-form{
+.card-form1{
   height: 100px;
   width: 350px;
   background-color: grey;
@@ -313,19 +319,38 @@ label {
   margin-bottom: 10px;
 }
 
-.card-form label{
+.card-form2{
+  height: 100px;
+  width: 350px;
+  background-color: grey;
+  display:flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card-form1 label{
   display: inline-block;
   width:100px;
   text-align: left;
   padding-top: 25px;
 }
 
-.card-form input{
+.card-form2 label{
+  display: inline-block;
+  width:150px;
+  text-align: left;
+  padding-top: 25px;
+}
+
+.card-form1 input{
   margin-top: 20px;
   height: 25px;
 }
 
-.card-form button{
+.card-form1 button,
+.card-form2 button{
   width: 100px;
   margin-top: 10px;
   border-radius: 10px;
