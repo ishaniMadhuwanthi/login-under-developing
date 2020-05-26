@@ -218,7 +218,88 @@ class Landingpage extends Component{
             )   
         }else if(this.state.activeTab === 3){
             return(
-                <div><h1>stock mgt</h1></div>
+                <div class = "row1">
+                <div class="column1">
+                <div className="wrapper-add">
+                   <form className="form-dadd">
+                   <h1>ADD To STOCK</h1>
+                   <div>
+                        <label htmlFor="dbgrp">Blood group:</label>
+                            <select id="dbgrp" name="dbgrp">
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                            </select>
+                        </div>
+                        <div className="rqua">
+                        <label htmlFor="rqua">Blood Quantity:</label>
+                           <input class ="rinput" placeholder="Blood Quantity" type="text" name="rqua" noValidate />    
+                        </div> 
+                        <div className="dage">
+                        <label htmlFor="dage">Sample number:</label>
+                           <input class ="rinput" placeholder="Enter sample no" type="text" name="dage" noValidate />    
+                        </div>  
+                        <div className="bday">
+                            <label htmlFor="bday">Sampled date:</label>
+                            <input type="date" id="bday" name="bday" />
+                        </div> 
+                        <div className="dname">
+                            <label htmlFor="dname" >Reg. Staff ID:</label>
+                            <input class ="rinput" placeholder="Enter staff ID" type="text" name="dfirst" noValidate />
+                        </div>       
+                        <div className="donoradd">
+                        <Button type="submit" raised colored>ADD</Button>
+                        </div>
+                   </form> 
+                </div>
+                </div>
+                <div class="column1">
+                <div className="wrapper-add">
+                   <form className="form-dadd">
+                   <h1>REMOVE From STOCK</h1>
+                   <div>
+                        <label htmlFor="dbgrp">Blood group:</label>
+                            <select id="dbgrp" name="dbgrp">
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                            </select>
+                        </div>
+                        <div className="dage">
+                        <label htmlFor="dage">Sample number:</label>
+                           <input class ="rinput" placeholder="Enter sample no" type="text" name="dage" noValidate />    
+                        </div>  
+                        <div className="bday">
+                            <label htmlFor="bday">Sampled date:</label>
+                            <input type="date" id="bday" name="bday" />
+                        </div> 
+                        <div className="bday">
+                            <label htmlFor="bday">Remove date:</label>
+                            <input type="date" id="bday" name="bday" />
+                        </div> 
+                        <div className="dname">
+                            <label htmlFor="dname" >Reg. Staff ID:</label>
+                            <input class ="rinput" placeholder="Enter staff ID" type="text" name="dfirst" noValidate />
+                        </div>       
+                        <div className="donoradd">
+                        <Button type="submit" raised colored>REMOVE</Button>
+                        </div>
+                   </form> 
+                </div>
+                </div>
+            </div>
+                
+                
             )   
         }
     }
@@ -239,7 +320,7 @@ class Landingpage extends Component{
                       <h2>Blood Bank Management System</h2>
                 </Header>
 
-            <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+            <Tabs class="tabline" activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
                 <Tab>Dashboard</Tab>
                 <Tab>Donar Management</Tab>
                 <Tab>Recipients Management</Tab>
@@ -251,10 +332,7 @@ class Landingpage extends Component{
                         <div className="content">{this.toggleCategories()}</div>
                     </Cell>
                 </Grid>       
-            </section>
-
-
-            
+            </section>        
         </div> 
         )
     }
