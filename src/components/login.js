@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Header} from "react-mdl";
-
 
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -48,6 +46,7 @@ class Login extends Component{
         this.props.history.replace( '/landingpage');
     }
 
+    
     handleSubmit = e => {
         e.preventDefault();
     
@@ -62,7 +61,10 @@ class Login extends Component{
         } else {
           console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         }
+        
     };
+
+    
 
     handleChange = e => {
         e.preventDefault();
@@ -109,7 +111,7 @@ class Login extends Component{
                         />
                     </div> */}
                 <div className="form-wrapper">
-                    <h1>LOGIN</h1>
+                    <h1>SIGN IN</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
                         <div className="email">
                             <label htmlFor="email">Email</label>
@@ -140,7 +142,7 @@ class Login extends Component{
                                 )}
                         </div>
                         <div className="createAccount">
-                            <button type="submit" onClick={this.goTolanding}>Sign In</button>
+                            <button type="submit" onClick={this.goTolanding}>Sign In</button> 
                         </div>
                     </form>
                 </div>
