@@ -22,7 +22,7 @@ const emailRegex = RegExp(
   };
   
 
-class Register extends Component{
+class Otherreg extends Component{
 
     constructor(props) {
         super(props);
@@ -32,14 +32,12 @@ class Register extends Component{
         this.state = {
           firstName: null,
           lastName: null,
-          staffid:null,
           nic: null, 
           email: null,
           password: null,
           formErrors: {
             firstName: "",
             lastName: "",
-            staffid:"",
             nic: "", 
             email: "",
             password: ""
@@ -50,18 +48,19 @@ class Register extends Component{
       goTolanding = (e) =>{ 
         e.preventDefault();
         console.log(this.state);
-        this.props.history.replace( '/login');
+        this.props.history.replace( '/otherlog');
     }
+
     goToHome = (e) =>{ 
-      e.preventDefault();
-      console.log(this.state);
-      this.props.history.replace( '/home');
-  }
-  goToAbout = (e) => {
-      e.preventDefault();
-      console.log(this.state);
-      this.props.history.replace( '/aboutme');
-  }
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/home');
+    }
+    goToAbout = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/aboutme');
+    }
 
     handleSubmit = e => {
         e.preventDefault();
@@ -72,7 +71,6 @@ class Register extends Component{
             First Name: ${this.state.firstName}
             Last Name: ${this.state.lastName}
             nic: ${this.state.nic}
-            staffid: ${this.state.staffid}
             Email: ${this.state.email}
             Password: ${this.state.password} 
           `);
@@ -95,10 +93,6 @@ class Register extends Component{
             break;
           case "lastName":
             formErrors.lastName =
-              value.length < 3 ? "Minimum 3 characaters required" : "";
-            break;
-          case "staffid":
-            formErrors.staffid =
               value.length < 3 ? "Minimum 3 characaters required" : "";
             break;
           case "nic":
@@ -126,8 +120,8 @@ class Register extends Component{
         const { formErrors } = this.state;
 
         return(
-          <div>
-             <Header className="header-color" scroll>
+            <div>
+                 <Header className="header-color" scroll>
                  <div style={{position: 'relative'}}>
                     <IconButton name="more_vert" id="demo-menu-lower-left"/>
                          <Menu target="demo-menu-lower-left">
@@ -141,7 +135,7 @@ class Register extends Component{
                 </Header> 
             <div className="wrapper">
                 <div className="form-wrapper">
-                    <h1>ADMIN SIGN UP</h1>
+                    <h1>CREATE ACCOUNT</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
                         <div className="firstName">
                             <label htmlFor="firstName">First Name</label>
@@ -185,20 +179,7 @@ class Register extends Component{
                             <span className="errorMessage">{formErrors.nic}</span>
                             )}
                         </div>
-                        <div className="staffid">
-                        <label htmlFor="staffid">Staff ID</label>
-                           <input
-                            className={formErrors.staffid.length > 0 ? "error" : null}
-                            placeholder="Staff ID"
-                            type="text"
-                            name="staffid"
-                            noValidate
-                            onChange={this.handleChange}
-                           />
-                            {formErrors.staffid.length > 0 && (
-                            <span className="errorMessage">{formErrors.staffid}</span>
-                            )}
-                        </div>
+
                         <div className="email">
                             <label htmlFor="email">Email</label>
                                 <input
@@ -238,4 +219,4 @@ class Register extends Component{
         )
     }
 }
-export default Register;
+export default Otherreg;

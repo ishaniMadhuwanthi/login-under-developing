@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Header, IconButton,Menu,MenuItem} from "react-mdl";
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
   );
@@ -26,6 +26,8 @@ class Login extends Component{
     constructor(props) {
         super(props);
         this.goTolanding = this.goTolanding.bind(this);
+        this.goToHome = this.goToHome.bind(this);
+        this.goToAbout= this.goToAbout.bind(this);
         this.state = {
           firstName: null,
           lastName: null,
@@ -44,6 +46,16 @@ class Login extends Component{
         e.preventDefault();
         console.log(this.state);
         this.props.history.replace( '/landingpage');
+    }
+    goToHome = (e) =>{ 
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/home');
+    }
+    goToAbout = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/aboutme');
     }
 
     
@@ -100,18 +112,23 @@ class Login extends Component{
 
         const { formErrors } = this.state;
 
-        return(    
-            <div className="wrapper">
-                    <h2>Blood Bank Management System</h2>
-                     {/* <div>
-                        <img
-                          src="https://cdn2.iconfinder.com/data/icons/audio-16/96/user_avatar_profile_login_button_account_member-512.png"
-                          alt="avatar-login"
-                          className="avatar-login"
-                        />
-                    </div> */}
+        return( 
+          <div>
+            <Header className="header-color" scroll>
+                 <div style={{position: 'relative'}}>
+                    <IconButton name="more_vert" id="demo-menu-lower-left"/>
+                         <Menu target="demo-menu-lower-left">
+                            <MenuItem onClick={this.goToHome}>Home</MenuItem>
+                            <MenuItem onClick={this.goToAbout}>About us</MenuItem>
+                            <MenuItem>Logout</MenuItem>
+                            <MenuItem>Settings</MenuItem>
+                         </Menu>
+                 </div>
+                      <h2>Blood Bank Management System</h2>
+                </Header> 
+            <div className="wrapper">         
                 <div className="form-wrapper">
-                    <h1>SIGN IN</h1>
+                    <h1>ADMIN SIGN IN</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
                         <div className="email">
                             <label htmlFor="email">Email</label>
@@ -146,6 +163,7 @@ class Login extends Component{
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         )
     }

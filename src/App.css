@@ -2,7 +2,7 @@
     background: #833ab4;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-}
+  }
 
 .landing-grid {
     background: #833ab4;  /* fallback for old browsers */
@@ -359,7 +359,6 @@ label {
 }
 
 .about {
-  background-color: rgb(190, 123, 151);
   position: fixed;
   top: 0;
   left: 0;
@@ -368,12 +367,18 @@ label {
   display:flex;
   flex-direction: column;
   overflow-y: scroll;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwb3MTnF4u6tDDVpkXeycYGKHF7nle9hwMDlAOGdYnNcDQCeKx&usqp=CAU');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .header-color h2 {
   font-weight: bold;
   color: #222;
   text-align: center;
+  margin-left: 200px;
+  font-size: 35px;
 }
 
 .about h3{
@@ -394,3 +399,11 @@ label {
   margin-bottom: 2px;
 }
 
+.columnh {
+  float: left;
+  padding: 0 10px;
+}
+
+.rowh {
+  margin: 5px 420px;
+}

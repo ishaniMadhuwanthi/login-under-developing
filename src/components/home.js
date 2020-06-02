@@ -6,12 +6,19 @@ class Home extends Component{
     constructor(props){
         super(props);
         this.goToReg = this.goToReg.bind(this);
+        this.goToRegother = this.goToRegother.bind(this);
     }
 
     goToReg = (e) =>{ 
         e.preventDefault();
         console.log(this.state);
         this.props.history.replace( '/register');
+    }
+
+    goToRegother = (e) =>{ 
+        e.preventDefault();
+        console.log(this.state);
+        this.props.history.replace( '/otherreg');
     }
       
     render(){    
@@ -30,7 +37,14 @@ class Home extends Component{
                            <hr/>
                           <p>Donate your blood. Save others life.</p> 
                        </div> 
-                       <div><Button onClick={this.goToReg} raised colored>Sign In</Button></div>
+                       <div class="rowh">
+                           <div class="columnh">
+                       <div><Button onClick={this.goToReg} raised colored> Admin</Button></div>
+                       </div>
+                       <div class="columnh">
+                       <div><Button onClick={this.goToRegother} raised colored>Other</Button></div>
+                       </div>
+                       </div>
                     </Cell>
                 </Grid>    
             </div>

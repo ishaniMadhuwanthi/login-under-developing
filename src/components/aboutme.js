@@ -24,7 +24,7 @@ class Aboutme extends Component{
 
     render(){
         return(
-            <div class="about" scroll>
+            <div class="about" scroll >
                <Header className="header-color" scroll>
                <div style={{position: 'relative'}}>
                     <IconButton name="more_vert" id="demo-menu-lower-left"/>
@@ -36,7 +36,8 @@ class Aboutme extends Component{
                          </Menu>
                  </div>
                       <h2>Blood Bank Management System</h2>
-                </Header>  
+                </Header> 
+                
                        <h3>WELCOME!</h3>
                        <p class="intro">Blood Bank Management System<br/>
                        Under the authority of Ministry of Health Department<br/> 

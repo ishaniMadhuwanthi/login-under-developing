@@ -22,7 +22,7 @@ const emailRegex = RegExp(
   };
   
 
-class Register extends Component{
+class Otherlogin extends Component{
 
     constructor(props) {
         super(props);
@@ -32,15 +32,11 @@ class Register extends Component{
         this.state = {
           firstName: null,
           lastName: null,
-          staffid:null,
-          nic: null, 
           email: null,
           password: null,
           formErrors: {
             firstName: "",
             lastName: "",
-            staffid:"",
-            nic: "", 
             email: "",
             password: ""
           }
@@ -50,7 +46,7 @@ class Register extends Component{
       goTolanding = (e) =>{ 
         e.preventDefault();
         console.log(this.state);
-        this.props.history.replace( '/login');
+        this.props.history.replace( '/landingpage');
     }
     goToHome = (e) =>{ 
       e.preventDefault();
@@ -63,6 +59,7 @@ class Register extends Component{
       this.props.history.replace( '/aboutme');
   }
 
+    
     handleSubmit = e => {
         e.preventDefault();
     
@@ -71,17 +68,16 @@ class Register extends Component{
             --SUBMITTING--
             First Name: ${this.state.firstName}
             Last Name: ${this.state.lastName}
-            nic: ${this.state.nic}
-            staffid: ${this.state.staffid}
             Email: ${this.state.email}
-            Password: ${this.state.password} 
+            Password: ${this.state.password}
           `);
         } else {
           console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
         }
-       
-
+        
     };
+
+    
 
     handleChange = e => {
         e.preventDefault();
@@ -95,14 +91,6 @@ class Register extends Component{
             break;
           case "lastName":
             formErrors.lastName =
-              value.length < 3 ? "Minimum 3 characaters required" : "";
-            break;
-          case "staffid":
-            formErrors.staffid =
-              value.length < 3 ? "Minimum 3 characaters required" : "";
-            break;
-          case "nic":
-            formErrors.nic =
               value.length < 3 ? "Minimum 3 characaters required" : "";
             break;
           case "email":
@@ -125,9 +113,9 @@ class Register extends Component{
 
         const { formErrors } = this.state;
 
-        return(
+        return(    
           <div>
-             <Header className="header-color" scroll>
+            <Header className="header-color" scroll>
                  <div style={{position: 'relative'}}>
                     <IconButton name="more_vert" id="demo-menu-lower-left"/>
                          <Menu target="demo-menu-lower-left">
@@ -141,64 +129,8 @@ class Register extends Component{
                 </Header> 
             <div className="wrapper">
                 <div className="form-wrapper">
-                    <h1>ADMIN SIGN UP</h1>
+                    <h1>SIGN IN</h1>
                     <form onSubmit={this.handleSubmit} noValidate>
-                        <div className="firstName">
-                            <label htmlFor="firstName">First Name</label>
-                            <input
-                            className={formErrors.firstName.length > 0 ? "error" : null}
-                            placeholder="First Name"
-                            type="text"
-                            name="firstName"
-                            noValidate
-                            onChange={this.handleChange}
-                            />
-                            {formErrors.firstName.length > 0 && (
-                             <span className="errorMessage">{formErrors.firstName}</span>
-                              )}
-                        </div>
-                        <div className="lastName">
-                        <label htmlFor="lastName">Last Name</label>
-                           <input
-                            className={formErrors.lastName.length > 0 ? "error" : null}
-                            placeholder="Last Name"
-                            type="text"
-                            name="lastName"
-                            noValidate
-                            onChange={this.handleChange}
-                           />
-                            {formErrors.lastName.length > 0 && (
-                            <span className="errorMessage">{formErrors.lastName}</span>
-                            )}
-                        </div>
-                        <div className="nic">
-                        <label htmlFor="nic">NIC</label>
-                           <input
-                            className={formErrors.nic.length > 0 ? "error" : null}
-                            placeholder="NIC"
-                            type="text"
-                            name="nic"
-                            noValidate
-                            onChange={this.handleChange}
-                           />
-                            {formErrors.nic.length > 0 && (
-                            <span className="errorMessage">{formErrors.nic}</span>
-                            )}
-                        </div>
-                        <div className="staffid">
-                        <label htmlFor="staffid">Staff ID</label>
-                           <input
-                            className={formErrors.staffid.length > 0 ? "error" : null}
-                            placeholder="Staff ID"
-                            type="text"
-                            name="staffid"
-                            noValidate
-                            onChange={this.handleChange}
-                           />
-                            {formErrors.staffid.length > 0 && (
-                            <span className="errorMessage">{formErrors.staffid}</span>
-                            )}
-                        </div>
                         <div className="email">
                             <label htmlFor="email">Email</label>
                                 <input
@@ -228,14 +160,13 @@ class Register extends Component{
                                 )}
                         </div>
                         <div className="createAccount">
-                            <button type="submit" onClick={this.goTolanding}>Create Account</button>
-                            <small>Already Have an Account?</small>
+                            <button type="submit" onClick={this.goTolanding}>Sign In</button> 
                         </div>
                     </form>
                 </div>
-               </div>
+            </div>
             </div>
         )
     }
 }
-export default Register;
+export default Otherlogin;

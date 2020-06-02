@@ -149,27 +149,22 @@ class Landingpage extends Component{
             return(
                 <div className="wrapper-add">
                    <form className="form-dadd">
-                   <h1>ADD RECPIENTS</h1>
+                   <h1>BLOOD DESTRIBUTION</h1>
                         <div className="dname">
-                            <label htmlFor="dname" >Name:</label>
-                            <input class ="rinput" placeholder="Enter donor name" type="text" name="dfirst" noValidate />
-                        </div>
-                        <div className="dnic">
-                        <label htmlFor="dnic">NIC:</label>
-                           <input class ="rinput" placeholder="Enter NIC" type="text" name="dnic" noValidate />    
+                            <label htmlFor="dname" >Hospital Name:</label>
+                            <input class ="rinput" placeholder="Enter hospital name" type="text" name="dfirst" noValidate />
                         </div> 
-                        <div className="dsex">
-                        <label htmlFor="dsex">Gender:</label>
-                            <input type="radio" name="gender" value="male"/> Male
-                            <input type="radio" name="gender" value="female"/> Female
-                        </div>  
-                        <div className="dage">
-                        <label htmlFor="dage">Age:</label>
-                           <input class ="rinput" placeholder="Enter age" type="text" name="dage" noValidate />    
-                        </div>  
-                        
+                        <div className="ddist">
+                        <label htmlFor="ddist">District:</label>
+                            <select id="dist" name="dist">
+                                <option value="kurunegla">Kurunegala</option>
+                                <option value="colombo">Colombo</option>
+                                <option value="galle">Galle</option>
+                                <option value="Rathnapura">Rathnapura</option>
+                            </select>
+                        </div> 
                         <div className="bday">
-                            <label htmlFor="bday">Birthday:</label>
+                            <label htmlFor="bday">Request Date:</label>
                             <input type="date" id="bday" name="bday" />
                         </div> 
                         <div>
@@ -186,32 +181,19 @@ class Landingpage extends Component{
                             </select>
                         </div>
                         <div className="rqua">
-                        <label htmlFor="rqua">Blood Quantity:</label>
-                           <input class ="rinput" placeholder="Blood Quantity" type="text" name="rqua" noValidate />    
+                        <label htmlFor="rqua">Requested Blood Bag Amount:</label>
+                           <input class ="rinput" placeholder="Number of bags" type="text" name="rqua" noValidate />    
                         </div>
                         <div className="drday">
-                            <label htmlFor="drday">Registration date:</label>
+                            <label htmlFor="drday">Sending date:</label>
                             <input type="date" id="drday" name="drday" />
                         </div>
-                        <div className="ddist">
-                        <label htmlFor="ddist">District:</label>
-                            <select id="dist" name="dist">
-                                <option value="kurunegla">Kurunegala</option>
-                                <option value="colombo">Colombo</option>
-                                <option value="galle">Galle</option>
-                                <option value="Rathnapura">Rathnapura</option>
-                            </select>
-                        </div> 
                         <div className="dstaff">
                         <label htmlFor="dstaff">Staff ID:</label>
                            <input class ="rinput" placeholder="Enter staff ID" type="text" name="dstaff" noValidate />    
                         </div> 
-                        <div className="dbmgr">
-                        <label  htmlFor="dbmgr">Blood Processing Manager ID:</label>
-                           <input class ="rinput" placeholder="Blood Processing manager ID" type="text" name="dbmgr" noValidate />    
-                        </div> 
                         <div className="donoradd">
-                        <Button type="submit" raised colored>ADD</Button>
+                        <Button type="submit" raised colored> ORDER SEND</Button>
                         </div>
                    </form> 
                 </div>
