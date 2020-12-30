@@ -31,27 +31,23 @@ This is a web application including the database developed by targeting blood ba
 
 1. Clone the repository
 2. In the project directory you can run:
-          npm start
+         
+         npm start
           
 If it makes errors, run 
-          npm install or
-          npm update
+         
+         npm install or
+         npm update
           
 Runs the app in the development mode.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits. You will also see any lint errors in the console.
 
-The page will reload if you make edits.
-
-You will also see any lint errors in the console.
-
-3. Create database named **"login"** in your MySQL and edit configurations.
-
-You can download database using **login.sql** in this repository.
+3. Create database named **"login"** in your MySQL and edit configurations. You can download database using **login.sql** in this repository.
  
- database name: login
+ **Database name:** login
  
- database password: root
+ **Database password0**: root
 
 ```JavaScript
 const sequelize = new Sequelize('login', 'root', '', {
