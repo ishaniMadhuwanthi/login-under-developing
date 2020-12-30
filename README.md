@@ -11,7 +11,7 @@ Project Collaborators:-
 -------------------
 
 ## About Project
------------------------------
+
 This is a web application including the database developed by targeting blood bank. Following are the functionalites in the system.
 
 **Administration:**
@@ -28,7 +28,6 @@ This is a web application including the database developed by targeting blood ba
 * Can find hospital, where they can donate blood.
 
 ## Instructions
---------------------
 
 1. Clone the repository
 2. In the project directory you can run:
@@ -48,9 +47,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. T
 
 
 ## Dependencies
------------------------------
 
-### * For Client Directory
+### For Client Directory
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -64,7 +62,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. T
     "react-router-dom": "^5.1.2",
     "react-scripts": "^2.1.8"
 
-### * For Database Directory
+### For Database Directory
 
     "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
