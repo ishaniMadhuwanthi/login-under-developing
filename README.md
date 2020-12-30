@@ -11,7 +11,7 @@ Project Collaborators:-
 -------------------
 
 ## About Project
-
+-----------------------------
 This is a web application including the database developed by targeting blood bank. Following are the functionalites in the system.
 
 **Administration:**
@@ -28,6 +28,7 @@ This is a web application including the database developed by targeting blood ba
 * Can find hospital, where they can donate blood.
 
 ## Instructions
+--------------------
 
 1. Clone the repository
 2. In the project directory you can run:
@@ -43,30 +44,13 @@ Runs the app in the development mode.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits. You will also see any lint errors in the console.
 
-3. Create database named **"login"** in your MySQL and edit configurations. You can download database using **login.sql** in this repository.
- 
- **Database name:** login
- 
- **Database password0**: root
+3. Establish mongodb connections and run the directory.
 
-```JavaScript
-const sequelize = new Sequelize('login', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
-  operatorsAliases: false,
-
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-})
-```
 
 ## Dependencies
+-----------------------------
 
-### For Client Directory
+### * For Client Directory
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -80,7 +64,7 @@ const sequelize = new Sequelize('login', 'root', '', {
     "react-router-dom": "^5.1.2",
     "react-scripts": "^2.1.8"
 
-### For Database Directory
+### * For Database Directory
 
     "bcrypt": "^4.0.1",
     "cors": "^2.8.5",
